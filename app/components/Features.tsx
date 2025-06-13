@@ -1,7 +1,7 @@
 'use client';
 
-import { Card, Container, Grid, Stack, Text, ThemeIcon, Title } from '@mantine/core';
 import { IconFileText, IconTrendingUp, IconWallet } from '@tabler/icons-react';
+import { Card, Container, Grid, Stack, Text, ThemeIcon, Title } from '@mantine/core';
 
 const features = [
   {
@@ -28,7 +28,7 @@ export const Features = () => {
         <Title order={2} ta="center" size="2.5rem" fw={700}>
           すべての機能がここに
         </Title>
-        
+
         <Grid gutter="xl">
           {features.map((feature, index) => (
             <Grid.Col key={index} span={{ base: 12, md: 4 }}>
@@ -37,11 +37,11 @@ export const Features = () => {
                   <ThemeIcon size={60} radius="xl" variant="light">
                     <feature.icon size={30} />
                   </ThemeIcon>
-                  
+
                   <Title order={3} size="1.25rem" fw={600}>
                     {feature.title}
                   </Title>
-                  
+
                   <Text c="dimmed" size="sm">
                     {feature.description}
                   </Text>

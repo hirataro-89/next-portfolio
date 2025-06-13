@@ -1,20 +1,20 @@
 'use client';
 
-import { AppShell, Burger, Group, NavLink, Text } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { IconDashboard, IconFileText, IconSettings, IconUsers } from '@tabler/icons-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { IconDashboard, IconFileText, IconSettings, IconUsers } from '@tabler/icons-react';
+import { AppShell, Burger, Group, NavLink, Text } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 
 type Props = {
   children: React.ReactNode;
-}
+};
 
 type NavLinkType = {
   href: string;
   label: string;
   icon: React.ElementType;
-}
+};
 
 export default function AdminLayout({ children }: Props) {
   const [opened, { toggle }] = useDisclosure();
@@ -60,9 +60,7 @@ export default function AdminLayout({ children }: Props) {
         ))}
       </AppShell.Navbar>
 
-      <AppShell.Main bg="white">
-        {children}
-      </AppShell.Main>
+      <AppShell.Main bg="white">{children}</AppShell.Main>
     </AppShell>
   );
 }

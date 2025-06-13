@@ -7,7 +7,7 @@ import { mockInvoices } from './components/mockData';
 
 export default function InvoicesPage() {
   const handleNewInvoice = () => {
-    console.log('新規請求書作成');
+    // TODO: 新規請求書作成画面に遷移
   };
 
   return (

@@ -1,7 +1,7 @@
 'use client';
 
-import { Button, Container, Stack, Text, Title } from '@mantine/core';
 import { useRouter } from 'next/navigation';
+import { Button, Container, Stack, Text, Title } from '@mantine/core';
 
 export const Hero = () => {
   const router = useRouter();
@@ -18,18 +18,14 @@ export const Hero = () => {
           <br />
           もっとシンプルに
         </Title>
-        
+
         <Text size="xl" ta="center" c="dimmed" maw={600}>
           Invoicerは請求書の作成から入金管理まで、
           <br />
           面倒な作業をすべて自動化する請求書管理システムです
         </Text>
-        
-        <Button 
-          size="xl" 
-          variant="filled"
-          onClick={handleGetStarted}
-        >
+
+        <Button size="xl" variant="filled" onClick={handleGetStarted}>
           無料で試してみる
         </Button>
       </Stack>

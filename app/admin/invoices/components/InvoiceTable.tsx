@@ -17,10 +17,7 @@ export const InvoiceTable = ({ invoices }: Props) => {
 
   const getStatusBadge = (status: Invoice['status']) => {
     return (
-      <Badge
-        color={status === '入金済み' ? 'green' : 'orange'}
-        variant="filled"
-      >
+      <Badge color={status === '入金済み' ? 'green' : 'orange'} variant="filled">
         {status}
       </Badge>
     );
@@ -48,4 +45,4 @@ export const InvoiceTable = ({ invoices }: Props) => {
       <Table.Tbody>{rows}</Table.Tbody>
     </Table>
   );
-}
+};
