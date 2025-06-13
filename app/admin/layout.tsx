@@ -38,11 +38,18 @@ export default function AdminLayout({ children }: Props) {
       padding="md"
     >
       <AppShell.Header>
-        <Group h="100%" px="md">
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <Text size="xl" fw={600}>
-            Invoicer
-          </Text>
+        <Group h="100%" px="md" justify="space-between">
+          <Group>
+            <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+            <Text size="xl" fw={600}>
+              Invoicer
+            </Text>
+          </Group>
+          <Link href="/">
+            <Text size="sm" c="dimmed" style={{ cursor: 'pointer' }}>
+              トップページへ
+            </Text>
+          </Link>
         </Group>
       </AppShell.Header>
 
