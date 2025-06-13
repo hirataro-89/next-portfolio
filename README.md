@@ -1,19 +1,31 @@
-# Mantine Next.js template
+## エクスポートルール（命名・設計の方針）
 
-This is a template for [Next.js](https://nextjs.org/) app router + [Mantine](https://mantine.dev/).
-If you want to use pages router instead, see [next-pages-template](https://github.com/mantinedev/next-pages-template).
+このプロジェクトでは、可読性・保守性・補完性を高めるために以下のルールで `export` を使い分けています。
 
-## Features
+| ファイル種別         | exportの種類   | 命名・構成のルール |
+|----------------------|----------------|--------------------|
+| **ページファイル** (`page.tsx`) | `default export` | Next.js App Router の仕様に従い、ページは default export |
+| **UIコンポーネント** (`Button.tsx`など) | `named export` | `export const Button = ...` のように明示的にエクスポート |
+| **カスタムフック** (`useXxx.ts`) | `named export` | 複数のフックを同一ファイルにまとめることも想定し named export |
+| **ユーティリティ関数** (`formatDate.ts`など) | `named export`（単一でも） | 検索性・補完性を考慮し、基本は named export を採用 |
 
-This template comes with the following features:
 
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Jest](https://jestjs.io/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+### 使用例
 
-## npm scripts
+```tsx
+// 👎 avoid（default export for shared components）
+export default function Button() {
+  return <button>Click</button>;
+}
+
+// 👍 recommended（named export）
+export const Button = () => {
+  return <button>Click</button>;
+};
+```
+
+
+## 本プロジェクトのscripts
 
 ### Build and dev scripts
 

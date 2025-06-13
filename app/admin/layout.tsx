@@ -6,11 +6,21 @@ import { IconDashboard, IconFileText, IconSettings, IconUsers } from '@tabler/ic
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+type Props = {
+  children: React.ReactNode;
+}
+
+type NavLinkType = {
+  href: string;
+  label: string;
+  icon: React.ElementType;
+}
+
+export default function AdminLayout({ children }: Props) {
   const [opened, { toggle }] = useDisclosure();
   const pathname = usePathname();
 
-  const navLinks = [
+  const navLinks: NavLinkType[] = [
     { href: '/admin/dashboard', label: 'Dashboard', icon: IconDashboard },
     { href: '/admin/invoices', label: 'Invoices', icon: IconFileText },
     { href: '/admin/clients', label: 'Clients', icon: IconUsers },
