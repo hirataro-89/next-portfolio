@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(yarn add @mantine/charts recharts)"
+      "Bash(yarn add @mantine/charts recharts)",
+      "Bash(mkdir:*)"
     ],
     "deny": []
   }
