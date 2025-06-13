@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(yarn add @mantine/charts recharts)"
+    ],
+    "deny": []
+  }
+}
