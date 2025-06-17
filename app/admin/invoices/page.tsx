@@ -1,19 +1,23 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { Stack } from '@mantine/core';
+import { useInvoiceStore } from '../../stores/invoiceStore';
 import { InvoiceHeader } from './components/InvoiceHeader';
 import { InvoiceTable } from './components/InvoiceTable';
-import { mockInvoices } from './components/mockData';
 
 export default function InvoicesPage() {
+  const router = useRouter();
+  const invoices = useInvoiceStore((state) => state.invoices);
+
   const handleNewInvoice = () => {
-    // TODO: 新規請求書作成画面に遷移
+    router.push('/admin/invoices/new');
   };
 
   return (
     <Stack gap="md">
       <InvoiceHeader onNewInvoice={handleNewInvoice} />
-      <InvoiceTable invoices={mockInvoices} />
+      <InvoiceTable invoices={invoices} />
     </Stack>
   );
 }

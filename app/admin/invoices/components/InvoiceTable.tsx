@@ -1,7 +1,7 @@
 'use client';
 
 import { Badge, Table } from '@mantine/core';
-import { Invoice } from './types';
+import { Invoice } from '../../../stores/invoiceStore';
 
 type Props = {
   invoices: Invoice[];
@@ -26,7 +26,7 @@ export const InvoiceTable = ({ invoices }: Props) => {
   const rows = invoices.map((invoice) => (
     <Table.Tr key={invoice.id}>
       <Table.Td>{invoice.date}</Table.Td>
-      <Table.Td>{invoice.clientName}</Table.Td>
+      <Table.Td>{invoice.client}</Table.Td>
       <Table.Td>{formatCurrency(invoice.amount)}</Table.Td>
       <Table.Td>{getStatusBadge(invoice.status)}</Table.Td>
     </Table.Tr>
