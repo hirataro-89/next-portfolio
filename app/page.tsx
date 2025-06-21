@@ -1,11 +1,9 @@
-'use client';
-
 import { Stack } from '@mantine/core';
-import { CTA } from './components/CTA';
-import { DemoSection } from './components/DemoSection';
-import { Features } from './components/Features';
-import { Hero } from './components/Hero';
-import { Testimonials } from './components/Testimonials';
+import { CTA } from '../components/TopComponents/CTA';
+import { DemoSection } from '../components/TopComponents/DemoSection';
+import { Features } from '../components/TopComponents/Features';
+import { Hero } from '../components/TopComponents/Hero';
+import { Testimonials } from '../components/TopComponents/Testimonials';
 
 export default function HomePage() {
   return (

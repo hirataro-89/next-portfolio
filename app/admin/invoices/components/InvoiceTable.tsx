@@ -1,5 +1,3 @@
-'use client';
-
 import { Badge, Table } from '@mantine/core';
 import { Invoice } from '../../../stores/invoiceStore';
 
