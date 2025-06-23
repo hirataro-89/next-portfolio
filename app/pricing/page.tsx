@@ -1,7 +1,5 @@
+import { PricingTable } from '@/components/lp/PricingTable';
+
 export default function PricingPage() {
-  return (
-    <div>
-      <h1>Pricing</h1>
-    </div>
-  );
+  return <PricingTable />;
 }
