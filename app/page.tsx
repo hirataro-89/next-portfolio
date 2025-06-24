@@ -1,6 +1,6 @@
 import { Stack } from '@mantine/core';
+import { DemoSection } from '@/components/TopComponents/DemoSection';
 import { CTA } from '../components/TopComponents/CTA';
-import { DemoSection } from '../components/TopComponents/DemoSection';
 import { Features } from '../components/TopComponents/Features';
 import { Hero } from '../components/TopComponents/Hero';
 import { Testimonials } from '../components/TopComponents/Testimonials';

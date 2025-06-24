@@ -1,15 +1,7 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { Button, Container, Stack, Text, Title } from '@mantine/core';
 
-export const Hero = () => {
-  const router = useRouter();
-
-  const handleGetStarted = () => {
-    router.push('/admin/dashboard');
-  };
-
+export const Hero: React.FC = () => {
   return (
     <Container size="md" py={120}>
       <Stack align="center" gap="xl">
@@ -25,7 +17,7 @@ export const Hero = () => {
           面倒な作業をすべて自動化する請求書管理システムです
         </Text>
 
-        <Button size="xl" variant="filled" onClick={handleGetStarted}>
+        <Button component={Link} href="/admin/dashboard" size="xl" variant="filled">
           無料で試してみる
         </Button>
       </Stack>

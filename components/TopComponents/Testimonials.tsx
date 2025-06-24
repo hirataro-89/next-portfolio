@@ -1,8 +1,15 @@
 'use client';
 
-import { Avatar, Card, Container, Grid, Group, Stack, Text, Title } from '@mantine/core';
+import { Avatar, Box, Card, Container, Grid, Group, Stack, Text, Title } from '@mantine/core';
 
-const testimonials = [
+type Testimonial = {
+  name: string;
+  company: string;
+  comment: string;
+  avatar: string;
+};
+
+const testimonials: Testimonial[] = [
   {
     name: '田中 太郎',
     company: '株式会社ABC',
@@ -21,40 +28,42 @@ const testimonials = [
   },
 ];
 
-export const Testimonials = () => {
+export const Testimonials: React.FC = () => {
   return (
-    <Container size="lg" py={80} bg="gray.0">
-      <Stack gap="xl">
-        <Title order={2} ta="center" size="2.5rem" fw={700}>
-          お客様の声
-        </Title>
-
-        <Grid gutter="xl">
-          {testimonials.map((testimonial, index) => (
-            <Grid.Col key={index} span={{ base: 12, md: 6 }}>
-              <Card shadow="sm" padding="xl" radius="md" bg="white" h="100%">
-                <Stack gap="md">
-                  <Text size="md" style={{ lineHeight: 1.6 }}>
-                    "{testimonial.comment}"
-                  </Text>
-
-                  <Group>
-                    <Avatar src={testimonial.avatar} size="md" radius="xl" />
-                    <div>
-                      <Text fw={600} size="sm">
-                        {testimonial.name}
+    <Box className="u-full-width-wrap">
+      <Box bg="gray.0" w="100vw" pos="relative" left="50%" right="50%" ml="-50vw" mr="-50vw">
+        <Container size="lg" py={80}>
+          <Stack gap="xl">
+            <Title order={2} ta="center" size="2.5rem" fw={700}>
+              お客様の声
+            </Title>
+            <Grid gutter="xl">
+              {testimonials.map((testimonial, index) => (
+                <Grid.Col key={index} span={{ base: 12, md: 6 }}>
+                  <Card shadow="sm" padding="xl" radius="md" bg="white" h="100%">
+                    <Stack gap="md">
+                      <Text size="md" style={{ lineHeight: 1.6 }}>
+                        "{testimonial.comment}"
                       </Text>
-                      <Text c="dimmed" size="xs">
-                        {testimonial.company}
-                      </Text>
-                    </div>
-                  </Group>
-                </Stack>
-              </Card>
-            </Grid.Col>
-          ))}
-        </Grid>
-      </Stack>
-    </Container>
+                      <Group>
+                        <Avatar src={testimonial.avatar} size="md" radius="xl" />
+                        <Box>
+                          <Text fw={600} size="sm">
+                            {testimonial.name}
+                          </Text>
+                          <Text c="dimmed" size="xs">
+                            {testimonial.company}
+                          </Text>
+                        </Box>
+                      </Group>
+                    </Stack>
+                  </Card>
+                </Grid.Col>
+              ))}
+            </Grid>
+          </Stack>
+        </Container>
+      </Box>
+    </Box>
   );
 };

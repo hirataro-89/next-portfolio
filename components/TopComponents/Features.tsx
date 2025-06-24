@@ -3,7 +3,13 @@
 import { IconFileText, IconTrendingUp, IconWallet } from '@tabler/icons-react';
 import { Card, Container, Grid, Stack, Text, ThemeIcon, Title } from '@mantine/core';
 
-const features = [
+type Feature = {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+};
+
+const features: Feature[] = [
   {
     icon: IconFileText,
     title: '請求書作成',
