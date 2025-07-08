@@ -31,7 +31,7 @@ export const Features = () => {
   return (
     <Container size="lg" py={80}>
       <Stack gap="xl">
-        <Title order={2} ta="center" size="2.5rem" fw={700}>
+        <Title order={2} ta="center" size="2rem" fw={700}>
           すべての機能がここに
         </Title>
 

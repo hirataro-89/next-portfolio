@@ -9,7 +9,7 @@ export const CTA: React.FC = () => {
       <Box bg="blue" w="100vw" pos="relative" left="50%" right="50%" ml="-50vw" mr="-50vw">
         <Container size="md" py={100}>
           <Stack align="center" gap="xl">
-            <Title order={2} ta="center" size="2.5rem" fw={700} c="white">
+            <Title order={2} ta="center" size="2rem" fw={700} c="white">
               今すぐInvoicerを始めませんか？
             </Title>
             <Text size="lg" ta="center" c="white" opacity={0.9}>

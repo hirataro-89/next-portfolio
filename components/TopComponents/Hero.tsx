@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { Button, Container, Stack, Text, Title } from '@mantine/core';
+import styles from './Hero.module.css';
 
 export const Hero: React.FC = () => {
   return (
     <Container size="md" py={120}>
       <Stack align="center" gap="xl">
-        <Title order={1} ta="center" size="3.5rem" fw={800} c="dark">
+        <Title order={1} ta="center" fw={800} c="dark" className={styles.title}>
           請求書管理を、
           <br />
           もっとシンプルに

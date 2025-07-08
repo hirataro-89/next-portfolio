@@ -34,7 +34,7 @@ export const Testimonials: React.FC = () => {
       <Box bg="gray.0" w="100vw" pos="relative" left="50%" right="50%" ml="-50vw" mr="-50vw">
         <Container size="lg" py={80}>
           <Stack gap="xl">
-            <Title order={2} ta="center" size="2.5rem" fw={700}>
+            <Title order={2} ta="center" size="2rem" fw={700}>
               お客様の声
             </Title>
             <Grid gutter="xl">

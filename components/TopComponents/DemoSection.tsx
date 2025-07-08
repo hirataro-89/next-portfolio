@@ -14,7 +14,7 @@ export const DemoSection: React.FC = () => {
           <Grid align="center" gutter="xl">
             <Grid.Col span={{ base: 12, md: 6 }}>
               <Stack gap="lg">
-                <Title order={2} size="2.5rem" fw={700}>
+                <Title order={2} size="2rem" fw={700}>
                   管理画面のデモ体験
                 </Title>
                 <Text size="lg" c="dimmed">
