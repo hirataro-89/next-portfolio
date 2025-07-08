@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { Badge, Button, Card, Container, Grid, List, Stack, Text, Title } from '@mantine/core';
+import styles from './PricingTable.module.css';
 
 const pricingPlans = [
   {
@@ -74,28 +75,15 @@ export const PricingTable = () => {
               radius="md"
               withBorder
               h="100%"
-              style={{
-                position: 'relative',
-                border: plan.popular ? '2px solid var(--mantine-primary-color-filled)' : undefined,
-              }}
+              className={plan.popular ? styles.popularCard : styles.regularCard}
             >
               {plan.popular && (
-                <Badge
-                  color="blue"
-                  variant="filled"
-                  size="sm"
-                  style={{
-                    position: 'absolute',
-                    top: -10,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                  }}
-                >
-                  人気プラン
+                <Badge color="blue" variant="filled" size="sm" className={styles.popularBadge}>
+                  おすすめ
                 </Badge>
               )}
 
-              <Stack gap="md" h="100%">
+              <Stack gap="md" className={styles.planContent}>
                 <div>
                   <Title order={3}>{plan.name}</Title>
                   <Text size="sm" c="dimmed">
@@ -104,9 +92,7 @@ export const PricingTable = () => {
                 </div>
 
                 <div>
-                  <Text size="3rem" fw={700} c="dark">
-                    {plan.price}
-                  </Text>
+                  <Text className={styles.planPrice}>{plan.price}</Text>
                   {plan.period && (
                     <Text size="sm" c="dimmed">
                       {plan.period}
@@ -114,7 +100,7 @@ export const PricingTable = () => {
                   )}
                 </div>
 
-                <List spacing="xs" size="sm" style={{ flexGrow: 1 }}>
+                <List spacing="xs" size="sm" className={styles.featureList}>
                   {plan.features.map((feature, index) => (
                     <List.Item key={index}>{feature}</List.Item>
                   ))}
