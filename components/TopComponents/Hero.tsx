@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button, Container, Stack, Text, Title } from '@mantine/core';
+import { Button, Container, Group, Stack, Text, Title } from '@mantine/core';
 import styles from './Hero.module.css';
 
 export const Hero: React.FC = () => {
@@ -18,9 +18,14 @@ export const Hero: React.FC = () => {
           面倒な作業をすべて自動化する請求書管理システムです
         </Text>
 
-        <Button component={Link} href="/admin/dashboard" size="xl" variant="filled">
-          無料で試してみる
-        </Button>
+        <Group gap="md">
+          <Button component={Link} href="/admin/dashboard" size="xl" variant="filled">
+            無料で試してみる
+          </Button>
+          <Button component={Link} href="/pricing" size="xl" variant="outline">
+            料金プランを見る
+          </Button>
+        </Group>
       </Stack>
     </Container>
   );
