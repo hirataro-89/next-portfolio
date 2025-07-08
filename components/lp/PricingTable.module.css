@@ -1,0 +1,34 @@
+/* PricingTable CSSモジュール */
+
+.popularCard {
+  position: relative;
+  border: 2px solid var(--mantine-primary-color-filled);
+  overflow: visible;
+}
+
+.regularCard {
+  position: relative;
+  overflow: visible;
+}
+
+.popularBadge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.planContent {
+  height: 100%;
+}
+
+.planPrice {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--mantine-color-dark-9);
+}
+
+.featureList {
+  flex-grow: 1;
+}
