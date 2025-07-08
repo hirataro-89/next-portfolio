@@ -1,11 +1,6 @@
 import { InvoiceDetailPageClient } from '../../../../components/Admin/InvoiceDetailPageClient';
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-
-export default function InvoiceDetailPage({ params }: Props) {
-  return <InvoiceDetailPageClient params={params} />;
+export default async function InvoiceDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  return <InvoiceDetailPageClient params={resolvedParams} />;
 }
