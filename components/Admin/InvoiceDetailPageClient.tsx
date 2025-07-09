@@ -56,22 +56,22 @@ export const InvoiceDetailPageClient = ({ params }: Props) => {
           </Group>
 
           <Stack gap="sm">
-            <Group>
-              <Text fw={500} w={100}>
+            <Group wrap="nowrap">
+              <Text fw={500} style={{ minWidth: 80, flexShrink: 0 }}>
                 請求日:
               </Text>
               <Text>{invoice.date}</Text>
             </Group>
 
-            <Group>
-              <Text fw={500} w={100}>
+            <Group wrap="nowrap">
+              <Text fw={500} style={{ minWidth: 80, flexShrink: 0 }}>
                 顧客名:
               </Text>
               <Text>{invoice.client}</Text>
             </Group>
 
-            <Group>
-              <Text fw={500} w={100}>
+            <Group wrap="nowrap">
+              <Text fw={500} style={{ minWidth: 80, flexShrink: 0 }}>
                 金額:
               </Text>
               <Text size="lg" fw={600} c="blue">
@@ -79,8 +79,8 @@ export const InvoiceDetailPageClient = ({ params }: Props) => {
               </Text>
             </Group>
 
-            <Group>
-              <Text fw={500} w={100}>
+            <Group wrap="nowrap">
+              <Text fw={500} style={{ minWidth: 80, flexShrink: 0 }}>
                 ステータス:
               </Text>
               {getStatusBadge(invoice.status)}

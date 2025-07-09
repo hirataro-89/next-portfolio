@@ -53,16 +53,18 @@ export const InvoiceTable = ({ invoices }: Props) => {
   ));
 
   return (
-    <Table striped highlightOnHover>
-      <Table.Thead>
-        <Table.Tr>
-          <Table.Th>請求日</Table.Th>
-          <Table.Th>顧客名</Table.Th>
-          <Table.Th>金額</Table.Th>
-          <Table.Th>ステータス</Table.Th>
-        </Table.Tr>
-      </Table.Thead>
-      <Table.Tbody>{rows}</Table.Tbody>
-    </Table>
+    <Table.ScrollContainer minWidth={500}>
+      <Table striped highlightOnHover>
+        <Table.Thead>
+          <Table.Tr>
+            <Table.Th>請求日</Table.Th>
+            <Table.Th>顧客名</Table.Th>
+            <Table.Th>金額</Table.Th>
+            <Table.Th>ステータス</Table.Th>
+          </Table.Tr>
+        </Table.Thead>
+        <Table.Tbody>{rows}</Table.Tbody>
+      </Table>
+    </Table.ScrollContainer>
   );
 };

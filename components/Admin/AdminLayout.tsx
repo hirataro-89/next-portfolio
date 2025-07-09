@@ -17,7 +17,7 @@ type NavLinkType = {
 };
 
 export const AdminLayout = ({ children }: Props) => {
-  const [opened, { toggle }] = useDisclosure();
+  const [opened, { toggle, close }] = useDisclosure();
   const pathname = usePathname();
 
   const navLinks: NavLinkType[] = [
@@ -63,6 +63,7 @@ export const AdminLayout = ({ children }: Props) => {
             leftSection={<link.icon size="1rem" stroke={1.5} />}
             active={pathname === link.href}
             variant="filled"
+            onClick={close}
           />
         ))}
       </AppShell.Navbar>

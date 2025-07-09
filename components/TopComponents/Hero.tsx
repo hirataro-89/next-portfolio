@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
           面倒な作業をすべて自動化する請求書管理システムです
         </Text>
 
-        <Group gap="md">
+        <Group gap="md" justify="center">
           <Button component={Link} href="/admin/dashboard" size="xl" variant="filled">
             無料で試してみる
           </Button>
