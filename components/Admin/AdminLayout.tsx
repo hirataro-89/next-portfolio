@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { IconDashboard, IconFileText, IconSettings, IconUsers } from '@tabler/icons-react';
-import { AppShell, Burger, Group, NavLink, Text } from '@mantine/core';
+import { AppShell, Burger, Container, Group, NavLink, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
 type Props = {
@@ -17,7 +17,7 @@ type NavLinkType = {
 };
 
 export const AdminLayout = ({ children }: Props) => {
-  const [opened, { toggle }] = useDisclosure();
+  const [opened, { toggle, close }] = useDisclosure();
   const pathname = usePathname();
 
   const navLinks: NavLinkType[] = [
@@ -63,11 +63,16 @@ export const AdminLayout = ({ children }: Props) => {
             leftSection={<link.icon size="1rem" stroke={1.5} />}
             active={pathname === link.href}
             variant="filled"
+            onClick={close}
           />
         ))}
       </AppShell.Navbar>
 
-      <AppShell.Main bg="white">{children}</AppShell.Main>
+      <AppShell.Main bg="white">
+        <Container size="lg" py="md">
+          {children}
+        </Container>
+      </AppShell.Main>
     </AppShell>
   );
 };

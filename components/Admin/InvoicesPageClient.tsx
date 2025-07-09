@@ -15,7 +15,7 @@ export const InvoicesPageClient = () => {
   };
 
   return (
-    <Stack gap="md">
+    <Stack gap="lg">
       <InvoiceHeader onNewInvoice={handleNewInvoice} />
       <InvoiceTable invoices={invoices} />
     </Stack>

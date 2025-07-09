@@ -1,6 +1,6 @@
 'use client';
 
-import { Container, Stack, Table, Title } from '@mantine/core';
+import { Stack, Table, Title } from '@mantine/core';
 import { useClientStore } from '../../app/stores/clientStore';
 
 export const ClientsPageClient = () => {
@@ -16,10 +16,10 @@ export const ClientsPageClient = () => {
   ));
 
   return (
-    <Container size="lg" py="md">
-      <Stack gap="lg">
-        <Title order={2}>顧客一覧</Title>
+    <Stack gap="lg">
+      <Title order={2}>顧客一覧</Title>
 
+      <Table.ScrollContainer minWidth={500}>
         <Table striped highlightOnHover>
           <Table.Thead>
             <Table.Tr>
@@ -31,7 +31,7 @@ export const ClientsPageClient = () => {
           </Table.Thead>
           <Table.Tbody>{rows}</Table.Tbody>
         </Table>
-      </Stack>
-    </Container>
+      </Table.ScrollContainer>
+    </Stack>
   );
 };

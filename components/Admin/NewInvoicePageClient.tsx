@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { Button, Container, NumberInput, Stack, TextInput, Title } from '@mantine/core';
+import { Button, NumberInput, Stack, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { INVOICE_STATUS, useInvoiceStore } from '../../app/stores/invoiceStore';
 
@@ -67,39 +67,37 @@ export const NewInvoicePageClient = () => {
   };
 
   return (
-    <Container size="md" py="md">
-      <Stack gap="lg">
-        <Title order={2}>新規請求書作成</Title>
+    <Stack gap="lg">
+      <Title order={2}>新規請求書作成</Title>
 
-        <form onSubmit={form.onSubmit(handleSubmit)}>
-          <Stack gap="md">
-            {/* 顧客名入力フィールド */}
-            <TextInput
-              label="顧客名"
-              placeholder="株式会社サンプル"
-              required
-              {...form.getInputProps('client')}
-            />
+      <form onSubmit={form.onSubmit(handleSubmit)}>
+        <Stack gap="md">
+          {/* 顧客名入力フィールド */}
+          <TextInput
+            label="顧客名"
+            placeholder="株式会社サンプル"
+            required
+            {...form.getInputProps('client')}
+          />
 
-            {/* 金額入力フィールド */}
-            <NumberInput
-              label="金額"
-              placeholder="100000"
-              min={FORM_CONSTRAINTS.MIN_AMOUNT}
-              max={FORM_CONSTRAINTS.MAX_AMOUNT}
-              required
-              thousandSeparator=","
-              suffix="円"
-              {...form.getInputProps('amount')}
-            />
+          {/* 金額入力フィールド */}
+          <NumberInput
+            label="金額"
+            placeholder="100000"
+            min={FORM_CONSTRAINTS.MIN_AMOUNT}
+            max={FORM_CONSTRAINTS.MAX_AMOUNT}
+            required
+            thousandSeparator=","
+            suffix="円"
+            {...form.getInputProps('amount')}
+          />
 
-            {/* 送信ボタン */}
-            <Button type="submit" size="md" style={{ alignSelf: 'flex-start' }}>
-              請求書を作成
-            </Button>
-          </Stack>
-        </form>
-      </Stack>
-    </Container>
+          {/* 送信ボタン */}
+          <Button type="submit" size="md" style={{ alignSelf: 'flex-start' }}>
+            請求書を作成
+          </Button>
+        </Stack>
+      </form>
+    </Stack>
   );
 };
