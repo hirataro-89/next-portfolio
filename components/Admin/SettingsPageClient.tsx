@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Checkbox, Container, Stack, TextInput, Title } from '@mantine/core';
+import { Button, Checkbox, Stack, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 
 type SettingsForm = {
@@ -41,50 +41,48 @@ export const SettingsPageClient = () => {
   };
 
   return (
-    <Container size="md" py="md">
-      <Stack gap="lg">
-        <Title order={2}>設定</Title>
+    <Stack gap="lg">
+      <Title order={2}>設定</Title>
 
-        <form onSubmit={form.onSubmit(handleSubmit)}>
-          <Stack gap="md">
-            <TextInput
-              label="会社名"
-              placeholder="株式会社サンプル"
-              required
-              {...form.getInputProps('companyName')}
-            />
+      <form onSubmit={form.onSubmit(handleSubmit)}>
+        <Stack gap="md">
+          <TextInput
+            label="会社名"
+            placeholder="株式会社サンプル"
+            required
+            {...form.getInputProps('companyName')}
+          />
 
-            <TextInput
-              label="担当者名"
-              placeholder="田中 太郎"
-              {...form.getInputProps('contactName')}
-            />
+          <TextInput
+            label="担当者名"
+            placeholder="田中 太郎"
+            {...form.getInputProps('contactName')}
+          />
 
-            <TextInput
-              label="メールアドレス"
-              placeholder="example@company.com"
-              type="email"
-              required
-              {...form.getInputProps('email')}
-            />
+          <TextInput
+            label="メールアドレス"
+            placeholder="example@company.com"
+            type="email"
+            required
+            {...form.getInputProps('email')}
+          />
 
-            <TextInput
-              label="電話番号"
-              placeholder="03-1234-5678"
-              {...form.getInputProps('phoneNumber')}
-            />
+          <TextInput
+            label="電話番号"
+            placeholder="03-1234-5678"
+            {...form.getInputProps('phoneNumber')}
+          />
 
-            <Checkbox
-              label="入金通知メールを受け取る"
-              {...form.getInputProps('emailNotifications', { type: 'checkbox' })}
-            />
+          <Checkbox
+            label="入金通知メールを受け取る"
+            {...form.getInputProps('emailNotifications', { type: 'checkbox' })}
+          />
 
-            <Button type="submit" size="md" style={{ alignSelf: 'flex-start' }}>
-              保存する
-            </Button>
-          </Stack>
-        </form>
-      </Stack>
-    </Container>
+          <Button type="submit" size="md" style={{ alignSelf: 'flex-start' }}>
+            保存する
+          </Button>
+        </Stack>
+      </form>
+    </Stack>
   );
 };

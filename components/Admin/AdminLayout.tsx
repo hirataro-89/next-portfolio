@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { IconDashboard, IconFileText, IconSettings, IconUsers } from '@tabler/icons-react';
-import { AppShell, Burger, Group, NavLink, Text } from '@mantine/core';
+import { AppShell, Burger, Container, Group, NavLink, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
 type Props = {
@@ -67,7 +67,11 @@ export const AdminLayout = ({ children }: Props) => {
         ))}
       </AppShell.Navbar>
 
-      <AppShell.Main bg="white">{children}</AppShell.Main>
+      <AppShell.Main bg="white">
+        <Container size="lg" py="md">
+          {children}
+        </Container>
+      </AppShell.Main>
     </AppShell>
   );
 };

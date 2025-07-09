@@ -1,6 +1,6 @@
 'use client';
 
-import { Badge, Card, Container, Group, Stack, Text, Title } from '@mantine/core';
+import { Badge, Card, Group, Stack, Text, Title } from '@mantine/core';
 import { useInvoiceStore } from '../../app/stores/invoiceStore';
 
 type Props = {
@@ -31,67 +31,63 @@ export const InvoiceDetailPageClient = ({ params }: Props) => {
 
   if (!invoice) {
     return (
-      <Container size="md" py="md">
-        <Card shadow="sm" padding="lg" radius="md">
-          <Title order={2} ta="center" c="dimmed">
-            データが見つかりません
-          </Title>
-          <Text ta="center" mt="md" c="dimmed">
-            指定された請求書が存在しません。
-          </Text>
-        </Card>
-      </Container>
+      <Card shadow="sm" padding="lg" radius="md">
+        <Title order={2} ta="center" c="dimmed">
+          データが見つかりません
+        </Title>
+        <Text ta="center" mt="md" c="dimmed">
+          指定された請求書が存在しません。
+        </Text>
+      </Card>
     );
   }
 
   return (
-    <Container size="md" py="md">
-      <Stack gap="lg">
-        <Title order={2}>請求書詳細</Title>
+    <Stack gap="lg">
+      <Title order={2}>請求書詳細</Title>
 
-        <Card shadow="sm" padding="xl" radius="md">
-          <Stack gap="md">
-            <Group justify="space-between" align="flex-start">
-              <Text size="lg" fw={600}>
-                請求書 #{invoice.id}
+      <Card shadow="sm" padding="xl" radius="md">
+        <Stack gap="md">
+          <Group justify="space-between" align="flex-start">
+            <Text size="lg" fw={600}>
+              請求書 #{invoice.id}
+            </Text>
+            {getStatusBadge(invoice.status)}
+          </Group>
+
+          <Stack gap="sm">
+            <Group>
+              <Text fw={500} w={100}>
+                請求日:
+              </Text>
+              <Text>{invoice.date}</Text>
+            </Group>
+
+            <Group>
+              <Text fw={500} w={100}>
+                顧客名:
+              </Text>
+              <Text>{invoice.client}</Text>
+            </Group>
+
+            <Group>
+              <Text fw={500} w={100}>
+                金額:
+              </Text>
+              <Text size="lg" fw={600} c="blue">
+                {formatCurrency(invoice.amount)}
+              </Text>
+            </Group>
+
+            <Group>
+              <Text fw={500} w={100}>
+                ステータス:
               </Text>
               {getStatusBadge(invoice.status)}
             </Group>
-
-            <Stack gap="sm">
-              <Group>
-                <Text fw={500} w={100}>
-                  請求日:
-                </Text>
-                <Text>{invoice.date}</Text>
-              </Group>
-
-              <Group>
-                <Text fw={500} w={100}>
-                  顧客名:
-                </Text>
-                <Text>{invoice.client}</Text>
-              </Group>
-
-              <Group>
-                <Text fw={500} w={100}>
-                  金額:
-                </Text>
-                <Text size="lg" fw={600} c="blue">
-                  {formatCurrency(invoice.amount)}
-                </Text>
-              </Group>
-
-              <Group>
-                <Text fw={500} w={100}>
-                  ステータス:
-                </Text>
-                {getStatusBadge(invoice.status)}
-              </Group>
-            </Stack>
           </Stack>
-        </Card>
-      </Stack>
-    </Container>
+        </Stack>
+      </Card>
+    </Stack>
   );
 };
