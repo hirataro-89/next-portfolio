@@ -1,7 +1,8 @@
 # Invoicer SaaS - 請求書管理システム
 
 ## 概要
-Invoicerは請求書の作成から入金管理まで、面倒な作業をすべて自動化する請求書管理システムです。制作会社向けのポートフォリオプロジェクトとして開発されました。
+Invoicerは請求書の作成から入金管理まで、面倒な作業をすべて自動化する請求書管理システムです。<br>
+制作会社向けのポートフォリオプロジェクトとして開発しました。
 
 ## 主要機能
 
@@ -47,7 +48,6 @@ Invoicerは請求書の作成から入金管理まで、面倒な作業をすべ
 - **Stylelint** - CSSリンティング
 - **Husky** - Git hooks管理
 - **Jest** - テストフレームワーク
-- **Storybook** - コンポーネント開発環境
 
 ### パフォーマンス最適化
 - **Bundle Analyzer** - バンドルサイズ分析
@@ -67,7 +67,7 @@ next-portfolio/
 │   ├── pricing/            # 料金プラン
 │   └── stores/            # Zustand ストア
 ├── components/             # 共通コンポーネント
-│   ├── Admin/             # 管理画面用コンポーネント
+│   ├── Admin/             # **管理画面用コンポーネント**
 │   ├── TopComponents/     # LPコンポーネント
 │   └── lp/               # LP専用コンポーネント
 ├── styles/                # グローバルスタイル
@@ -102,9 +102,6 @@ yarn analyze
 
 ### 開発ツール
 ```bash
-# Storybook起動
-yarn storybook
-
 # コードフォーマット
 yarn prettier:write
 
@@ -127,7 +124,6 @@ yarn jest:watch
 - TypeScriptによる型安全な開発
 - ESLintとPrettierによるコード品質管理
 - Huskyによる自動的なコード品質チェック
-- Storybookによるコンポーネント開発
 
 ### 🚀 パフォーマンス
 - Next.js 15の最新機能活用
